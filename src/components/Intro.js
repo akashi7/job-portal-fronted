@@ -1,10 +1,10 @@
-import image1 from '../Images/pp.jpg';
+import url from '../Images/pp.jpg';
 
 export const Intro = () => {
   return (
     <div className="intro">
       <div className="intro-div">
-        <img alt="photo" src={image1} className="me" />
+        <img alt="sz" src={url} className="me" />
         <div style={{ color: "whitesmoke" }} className="myintro">
           <h2 style={{ color: "#f7c52a" }} >HELLO I AM NSEKO KABUTO christian</h2>
           <br></br>
