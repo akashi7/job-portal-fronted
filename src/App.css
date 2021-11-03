@@ -175,6 +175,9 @@ a {
   .projects {
     width: 100%;
   }
+  .project {
+    margin-top: 10px;
+  }
   .second {
     display: flex;
     flex-wrap: wrap;
