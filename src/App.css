@@ -10,193 +10,256 @@ html {
 }
 body {
   height: 100vh;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  background-image: url('./Images/r.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  font-family: 'Montserrat', sans-serif;
 }
-.appbar {
+.homeBar {
   display: flex;
+  padding: 10px;
   justify-content: space-between;
-  padding: 10px;
-  background-color: rgb(29, 25, 25);
-  align-items: center;
-  color: whitesmoke;
-  position: fixed;
-  width: 100%;
-  height: 70px;
-  z-index: 2;
-  color: #f7c52a;
-}
-
-.phone {
-  display: flex;
-  flex-direction: row;
-}
-
-.email {
-  display: flex;
-  flex-direction: row;
-}
-.info {
-  display: flex;
-  flex-direction: row;
-  padding: 5px;
-}
-.sections {
-  width: 100%;
-  height: calc(100vh - 70px);
-  position: relative;
-  top: 70px;
-  scroll-snap-type: y mandatory;
-}
-.intro {
-  scroll-snap-align: start;
-  width: 100%;
-  height: calc(100vh - 70px);
-  text-align: center;
-}
-.about {
-  scroll-snap-align: start;
-  width: 100%;
-  height: fit-content;
-  background-color: red;
-}
-.project {
-  scroll-snap-align: start;
-  width: 100%;
-  height: fit-content;
-  padding: 10px;
-  text-align: center;
-  background-color: rgb(29, 25, 25);
-}
-.contact {
-  scroll-snap-align: start;
-  width: 100%;
-  height: calc(100vh - 70px);
   background-color: whitesmoke;
 }
-.about {
-  scroll-snap-align: start;
-  width: 100%;
-  height: calc(100vh - 70px);
-}
-.intro-div {
+.link {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+}
+.link button {
+  margin: 5px;
+  padding: 7px;
+  background-color: #f7c52a;
+  text-transform: uppercase;
+  border: none;
+  color: rgb(24, 24, 163);
+}
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.connectImage {
+  width: 40px;
+}
+.nav-link {
+  display: flex;
+  flex-direction: row;
+}
+.nav-link:hover {
+  cursor: pointer;
+}
+.one {
+  margin-left: 5px;
+  color: rgb(24, 24, 163);
+}
+.two {
+  color: #f7c52a;
+  margin-left: 5px;
+}
+.slides {
+  display: flex;
+  display: grid;
+  grid-template-areas: 'left slideshow-container';
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  background-color: rgb(72, 72, 202);
   padding: 10px;
 }
 
-.projects {
-  background-color: rgb(29, 25, 25);
-  width: 50%;
-  padding: 5px;
-  margin: 5px;
-  text-align: center;
-  align-items: center;
-  border: 1px solid whitesmoke;
-  color: whitesmoke;
+.imgTwo {
+  width: 80%;
+  height: 180px;
+}
+.imgOne {
+  width: 100%;
+  height: 180px;
+}
+.left {
+  grid-area: 'left';
+  padding: 10px;
+  width: 100%;
+}
+
+.slideshow-container {
+  grid-area: 'slideshow-container';
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.select {
+  padding: 11px;
+  border: none;
 }
 .button {
-  margin-top: 100px;
   background: #f7c52a;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 2px;
-  width: 30%;
+  width: fit-content;
   text-transform: uppercase;
-  margin-bottom: 12px;
 }
-.me {
-  width: 600px;
-  border-radius: 600px;
+.form {
+  margin-top: 20px;
 }
-.textarea {
+
+.Footer {
   padding: 10px;
-  width: 90%;
-  margin: 5px;
-  border-radius: 5px;
-  height: 300px;
+  background-color: rgb(72, 72, 202);
+  color: white;
+  display: flex;
+  display: grid;
+  grid-template-areas: 'LEFT MIDDLE RIGTH';
+  grid-template-columns: 1fr 1fr 1fr;
 }
-.input {
+.LEFT {
+  grid-area: 'LEFT';
+  width: 100%;
+  text-align: center;
+}
+.MIDDLE {
+  grid-area: 'MIDDLE';
+  width: 100%;
+  text-align: center;
+}
+.RIGTH {
+  grid-area: 'RIGTH';
+  text-align: center;
+  width: 100%;
+}
+.pics {
+  width: 45px;
+}
+.category {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  text-align: center;
+  align-items: center;
+}
+.job-d {
+  background-color: whitesmoke;
+  padding: 7px;
+  text-align: center;
+  margin: 7px;
+  width: 30%;
+  border: 0.5px solid rgb(187, 183, 183);
+}
+.round {
+  padding: 5px;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(24, 24, 163);
+}
+.portal {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  align-items: center;
+}
+.job-det {
+  padding: 10px;
+  text-align: center;
+}
+.JOB_D {
+  display: flex;
+  justify-content: space-around;
+  margin: 5px;
+  padding: 5px;
+}
+.app-button {
+  border: none;
+  padding: 5px;
+  text-transform: uppercase;
+  background: #f7c52a;
+}
+.apply-job {
+  padding: 10px;
+}
+.apply-btn {
+  margin-top: 15px;
+  background: #f7c52a;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  width: fit-content;
+  text-transform: uppercase;
+}
+.apply-btns {
+  margin-top: 15px;
+  background: #f7c52a;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  width: fit-content;
+  text-transform: uppercase;
+  margin-left: 10px;
+}
+.inputJ {
+  padding: 0.5rem 0.1rem;
+  width: 80%;
+  border-radius: 2px;
+  height: 48px;
+  border-bottom: 1px solid black;
+  transition: all 0.5s;
+  margin: 10px;
+  border: none;
+  background-color: whitesmoke;
+}
+.style {
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+}
+.file {
+  margin-left: 10px;
+}
+.inputs {
   border: none;
   padding: 0.5rem 0.1rem;
   width: 90%;
   border-radius: 2px;
   border-bottom: 1px solid black;
   transition: all 0.5s;
-  margin: 5px;
+  margin: 10px;
+  margin-left: 19px;
 }
-.myintro {
-  margin-top: 150px;
-}
-.first {
+.signin-div {
   display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-areas: 'lefts rights';
+  grid-template-columns: 1fr 1fr;
+  height: 90.5vh;
 }
-.second {
+.lefts {
+  grid-area: 'lefts';
+  width: 100%;
+  background-color: #f7c52a;
+  padding: 10px;
+}
+.rights {
+  grid-area: 'rights';
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+}
+.fles {
+  text-align: center;
+  align-items: center;
+  margin-top: 50px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  margin-left: 240px;
 }
-a {
-  text-decoration: none;
-  color: #f7c52a;
+.apply-btnv {
+  margin-top: 15px;
+  background: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  width: fit-content;
+  text-transform: uppercase;
+  margin-left: 10px;
 }
-@media only screen and (max-width: 480px) {
-  .appbar {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: fit-content;
-  }
-  .me {
-    margin-top: 50px;
-    width: 220px;
-    height: 250px;
-  }
-  .intro-div {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .myintro {
-    margin-top: 10px;
-  }
-  .myprojects {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .first {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-  .projects {
-    width: 100%;
-  }
-  .project {
-    margin-top: 10px;
-  }
-  .second {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-  .button {
-    width: fit-content;
-    width: 100%;
-  }
-  .phone {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 2px;
-    width: 100%;
-  }
-  .email {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 2px;
-    width: 100%;
-  }
+.center {
+  margin-top: 230px;
+  margin-left: 230px;
 }
