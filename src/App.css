@@ -28,7 +28,7 @@ body {
   background-color: #f7c52a;
   text-transform: uppercase;
   border: none;
-  color: rgb(24, 24, 163);
+  color: white;
 }
 .links {
   display: flex;
@@ -262,4 +262,64 @@ body {
 .center {
   margin-top: 230px;
   margin-left: 230px;
+}
+@media only screen and (max-width: 480px) {
+  .homeBar {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .slides {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .Footer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .MIDDLE {
+    margin-top: 20px;
+  }
+  .RIGTH {
+    margin-top: 20px;
+  }
+  .portal {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .job-d {
+    width: 100%;
+  }
+  .imgOne {
+    width: 100%;
+  }
+  .JOB_D {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: whitesmoke;
+    border: 1px solid gray;
+  }
+  .color {
+    color: rgb(24, 24, 163);
+    padding-right: 5px;
+  }
+  .style {
+    display: flex;
+    flex-direction: column;
+  }
+  .signin-div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .center {
+    margin-top: 30px;
+    margin-left: 60px;
+  }
+  .fles {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
 }
