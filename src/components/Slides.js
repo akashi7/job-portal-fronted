@@ -1,6 +1,14 @@
+
 import slideOne from '../Images/three.jpg';
 
-export const Slides = () => {
+
+export const Slides = ({ Categories }) => {
+
+  const categoryArray = Categories.jobCategory.map(({ id, category_name }) => {
+    return <option key={id}>{category_name} </option>;
+  });
+
+
 
   return (
     <div className="slides">
@@ -15,10 +23,7 @@ export const Slides = () => {
         <form className="form">
           <select className="select">
             <option>--Search category---</option>
-            <option>Software developer</option>
-            <option>Human resources</option>
-            <option>Database engineer</option>
-            <option>Accountant</option>
+            {categoryArray}
           </select>
           <button className="button">Search</button>
         </form>

@@ -54,3 +54,32 @@ export const HomeFooter = () => {
     </div>
   );
 };
+
+export const EmpNavBar = () => {
+  const history = useHistory();
+
+  function onLogOut() {
+    localStorage.clear();
+    history.push('/');
+  }
+  function goToJobs() {
+    history.push('/Dashboard/jobs');
+  }
+  function goDash() {
+    history.push('/Dashboard');
+  }
+  function goProfile() {
+    history.push('/Profile');
+  }
+
+  return (
+    <div className="homeBarEmp">
+      <p onClick={() => goDash()}>Dashboard</p>
+      <div className='emp-links'>
+        <p onClick={() => goProfile()}>Profile</p>
+        <p onClick={() => goToJobs()}>Jobs</p>
+        <p onClick={() => onLogOut()} >Log out</p>
+      </div>
+    </div>
+  );
+};

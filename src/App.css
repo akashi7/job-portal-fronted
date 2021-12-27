@@ -17,7 +17,20 @@ body {
   padding: 10px;
   justify-content: space-between;
   background-color: whitesmoke;
+  align-items: center;
 }
+.homeBarEmp {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  background-color: rgb(72, 72, 202);
+  align-items: center;
+  color: whitesmoke;
+}
+.homeBarEmp p:hover {
+  cursor: pointer;
+}
+
 .link {
   display: flex;
   justify-content: space-around;
@@ -97,6 +110,18 @@ body {
   width: fit-content;
   text-transform: uppercase;
 }
+.post-button {
+  background: #f7c52a;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  width: fit-content;
+  text-transform: uppercase;
+}
+.p-but {
+  margin-left: 19px;
+  margin-top: 20px;
+}
 .form {
   margin-top: 20px;
 }
@@ -152,12 +177,25 @@ body {
 .portal {
   display: flex;
   flex-wrap: wrap;
-  padding: 10px;
   align-items: center;
+  height: 400px;
+  padding: 10px;
+  overflow-y: auto;
+}
+.job-dets {
+  display: none;
 }
 .job-det {
   padding: 10px;
   text-align: center;
+  background-color: whitesmoke;
+  margin: 8px;
+  border: 1px solid rgb(160, 159, 159);
+  border-radius: 10px;
+}
+.allJ {
+  height: 400px;
+  overflow-y: auto;
 }
 .JOB_D {
   display: flex;
@@ -182,6 +220,7 @@ body {
   border-radius: 2px;
   width: fit-content;
   text-transform: uppercase;
+  margin-left: 10px;
 }
 .apply-btns {
   margin-top: 15px;
@@ -195,13 +234,12 @@ body {
 }
 .inputJ {
   padding: 0.5rem 0.1rem;
-  width: 80%;
+  width: 50%;
   border-radius: 2px;
   height: 48px;
-  border-bottom: 1px solid black;
   transition: all 0.5s;
   margin: 10px;
-  border: none;
+  border: 1px solid rgb(160, 158, 158);
   background-color: whitesmoke;
 }
 .style {
@@ -212,7 +250,7 @@ body {
 .file {
   margin-left: 10px;
 }
-.inputs {
+.input {
   border: none;
   padding: 0.5rem 0.1rem;
   width: 90%;
@@ -263,6 +301,155 @@ body {
 .center {
   margin-top: 230px;
   margin-left: 230px;
+}
+.no-jobs {
+  text-align: center;
+  padding: 10px;
+}
+.inputs {
+  border: 1px solid black;
+  padding: 0.5rem 0.1rem;
+  width: 40%;
+  border-radius: 2px;
+  border-bottom: 1px solid black;
+  transition: all 0.5s;
+  margin: 10px;
+  margin-left: 19px;
+}
+.emp-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.emp-links p {
+  margin: 8px;
+}
+.emp-links p:hover {
+  cursor: pointer;
+}
+
+.dropzone {
+  text-align: center;
+  padding: 30px;
+  border: 3px dashed #142501;
+  background-color: #fafafa;
+  color: #bdbdbd;
+  cursor: pointer;
+  margin-bottom: 20px;
+  width: 100%;
+  margin-left: 19px;
+}
+.selected-file {
+  color: #000;
+  font-weight: bold;
+}
+.empPost {
+  padding: 20px;
+}
+.descri {
+  margin-left: 109px;
+  padding: 20px;
+}
+.sent {
+  padding: 10px;
+  text-align: center;
+}
+.datePiker {
+  margin-left: 19px;
+}
+.linka {
+  color: blue;
+}
+.empJobs {
+  padding: 10px;
+  height: 91vh;
+  overflow-y: auto;
+  text-align: center;
+}
+.hisJobs {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px;
+  background-color: whitesmoke;
+  padding: 9px;
+  color: rgb(72, 72, 202);
+  border: 1px solid rgb(72, 72, 202);
+  text-align: center;
+  align-items: center;
+  width: 60%;
+  margin-left: 250px;
+}
+.viewPeople {
+  display: grid;
+  display: flex;
+  grid-template-areas: 'leftSide centerSide rightSide';
+}
+.leftSide {
+  grid-area: 'leftSide';
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+.centerSide {
+  grid-area: 'centerSide';
+  width: 100%;
+  height: 550px;
+  overflow-y: auto;
+  text-align: center;
+  padding: 10px;
+}
+.rightSide {
+  grid-area: 'rightSide';
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+.userCv {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px;
+  border: 1px solid #f7c52a;
+  background-color: whitesmoke;
+  margin: 7px;
+}
+.align {
+  display: flex;
+  flex-direction: row;
+}
+.dashboard {
+  background-color: rgb(221, 219, 219);
+  height: 100vh;
+}
+.inputsv {
+  border: 1px solid black;
+  padding: 0.5rem 0.1rem;
+  width: 90%;
+  border-radius: 2px;
+  border-bottom: 1px solid black;
+  transition: all 0.5s;
+  margin: 10px;
+  margin-left: 19px;
+}
+.buttonk {
+  margin-top: 10px;
+  background: #f7c52a;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  width: fit-content;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  margin-left: 19px;
+}
+.search_P {
+  margin-top: 100px;
+  margin-left: 300px;
+  width: 50%;
+  padding: 10px;
+}
+.search_P p {
+  margin-left: 20px;
+  color: black;
 }
 @media only screen and (max-width: 480px) {
   .homeBar {
@@ -322,5 +509,8 @@ body {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
+  }
+  .inputJ {
+    width: 90%;
   }
 }

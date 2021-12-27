@@ -1,86 +1,36 @@
-import manager from '../Images/manager.png';
-import account from '../Images/account.png';
+
+// import manager from '../Images/manager.png';
+// import account from '../Images/account.png';
 import dev from '../Images/dev.png';
 import { useHistory } from 'react-router-dom';
 
-export const Jobs = () => {
+export const Jobs = ({ Categories }) => {
 
   const history = useHistory();
 
+  const goViewJobs = (categName) => {
+    localStorage.setItem("category", categName);
+    history.push("/jobs");
+  };
+
   return (
     <div className="portal">
-      <div className="job-d">
-        <h3>Junior developer</h3>
-        <br></br>
-        <button className="round">8</button>
-        <br></br>
-        <br></br>
-        <div className="category">
-          <img src={dev} className="pics" alt="dev" />
-          <br></br>
-          <button className="button" onClick={() => history.push("/jobs")}>Browse</button>
-        </div>
-      </div>
-      <div className="job-d">
-        <h3>Manager</h3>
-        <br></br>
-        <button className="round">8</button>
-        <br></br>
-        <br></br>
-        <div className="category">
-          <img src={manager} className="pics" alt="dev" />
-          <br></br>
-          <button className="button" onClick={() => history.push("/jobs")}>Browse</button>
-        </div>
-      </div>
-      <div className="job-d">
-        <h3>Accountant</h3>
-        <br></br>
-        <button className="round">8</button>
-        <br></br>
-        <br></br>
-        <div className="category">
-          <img src={account} className="pics" alt="dev" />
-          <br></br>
-          <button className="button" onClick={() => history.push("/jobs")}>Browse</button>
-        </div>
-      </div>
-      <div className="job-d">
-        <h3>Accountant</h3>
-        <br></br>
-        <button className="round">8</button>
-        <br></br>
-        <br></br>
-        <div className="category">
-          <img src={account} className="pics" alt="dev" />
-          <br></br>
-          <button className="button" onClick={() => history.push("/jobs")}>Browse</button>
-        </div>
-      </div>
-      <div className="job-d">
-        <h3>Junior developer</h3>
-        <br></br>
-        <button className="round">8</button>
-        <br></br>
-        <br></br>
-        <div className="category">
-          <img src={dev} className="pics" alt="dev" />
-          <br></br>
-          <button className="button" onClick={() => history.push("/jobs")}>Browse</button>
-        </div>
-      </div>
-      <div className="job-d">
-        <h3>Manager</h3>
-        <br></br>
-        <button className="round">8</button>
-        <br></br>
-        <br></br>
-        <div className="category">
-          <img src={manager} className="pics" alt="dev" />
-          <br></br>
-          <button className="button" onClick={() => history.push("/jobs")}>Browse</button>
-        </div>
-      </div>
+      {Categories.jobCategory.map(({ id, category_name, positions }) => {
+        return (
+          <div key={id} className="job-d">
+            <h3>{category_name}</h3>
+            <br></br>
+            {!positions ? <button className="round">0</button> : <button className="round"> {positions} </button>}
+            <br></br>
+            <br></br>
+            <div className="category">
+              <img src={dev} className="pics" alt="dev" />
+              <br></br>
+              <button className="button" onClick={() => goViewJobs(category_name)}>Browse</button>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };
