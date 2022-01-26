@@ -435,23 +435,23 @@ body {
   flex-direction: row;
 }
 .dashboard {
-  background-color: rgb(221, 219, 219);
+  background-color: white;
   height: 100vh;
 }
 .allApp {
-  background-color: rgb(221, 219, 219);
+  background-color: white;
   height: 100vh;
 }
 .newApp {
-  background-color: rgb(221, 219, 219);
+  background-color: white;
   height: 100vh;
 }
 .selecteAp {
-  background-color: rgb(221, 219, 219);
+  background-color: white;
   height: 100vh;
 }
 .notViewed {
-  background-color: rgb(221, 219, 219);
+  background-color: white;
   height: 100vh;
 }
 .inputsv {
@@ -493,22 +493,20 @@ body {
 .dashbar1 {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: whitesmoke;
   border-radius: 5px;
   color: black;
   padding: 10px;
   margin: 10px;
   text-align: center;
   width: 20%;
-  border: 1px solid #009879;
   border-left: 5px solid black;
 }
 .dashbar2 {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: whitesmoke;
   border-radius: 5px;
-  border: 1px solid #009879;
   color: black;
   padding: 10px;
   margin: 10px;
@@ -519,9 +517,8 @@ body {
 .dashbar3 {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: whitesmoke;
   border-radius: 5px;
-  border: 1px solid #009879;
   color: black;
   padding: 10px;
   margin: 10px;
@@ -532,9 +529,8 @@ body {
 .dashbar4 {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: whitesmoke;
   border-radius: 5px;
-  border: 1px solid #009879;
   color: black;
   padding: 10px;
   margin: 10px;
@@ -545,9 +541,8 @@ body {
 .dashbar5 {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: whitesmoke;
   border-radius: 5px;
-  border: 1px solid #009879;
   color: black;
   padding: 10px;
   margin: 10px;
@@ -621,7 +616,6 @@ body {
   width: 40%;
   color: black;
   background-color: whitesmoke;
-  border: 1px solid #009879;
 }
 .oneDash2 {
   display: flex;
@@ -632,7 +626,6 @@ body {
   width: 40%;
   color: black;
   background-color: whitesmoke;
-  border: 1px solid #009879;
 }
 .oneDash3 {
   display: flex;
@@ -643,7 +636,6 @@ body {
   width: 40%;
   color: black;
   background-color: whitesmoke;
-  border: 1px solid #009879;
 }
 .arrange {
   display: flex;
