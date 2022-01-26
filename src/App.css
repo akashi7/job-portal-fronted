@@ -105,6 +105,7 @@ body {
 .chooseCate {
   padding: 10px;
   border: none;
+  background-color: whitesmoke;
 }
 .filterCate {
   padding: 5px;
@@ -623,6 +624,7 @@ body {
   background-color: white;
   border-left: 5px solid darkblue;
   box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+  border-radius: 5px;
 }
 .oneDash2 {
   display: flex;
@@ -635,6 +637,7 @@ body {
   background-color: white;
   border-left: 5px solid red;
   box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+  border-radius: 5px;
 }
 .oneDash3 {
   display: flex;
@@ -647,6 +650,7 @@ body {
   background-color: white;
   border-left: 5px solid darkgreen;
   box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+  border-radius: 5px;
 }
 .arrange {
   display: flex;
