@@ -1,16 +1,21 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { HomeBar, HomeFooter } from "../components/AppBar";
 import { AppContext } from "../context/AppContext";
 import { Slides } from "../components/Slides";
 import { Jobs } from "../components/Jobs";
 
-export const Home = () => {
+export default function Home() {
 
   const { Categories, fetchCategories } = useContext(AppContext);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     (async () => {
-      await fetchCategories();
+      try {
+        await fetchCategories();
+      } catch (error) {
+        setError(true);
+      }
     })();
     //eslint-disable-next-line
   }, []);
@@ -18,8 +23,14 @@ export const Home = () => {
   return (
     <div>
       <HomeBar />
-      <Slides Categories={Categories} />
-      <Jobs Categories={Categories} />
+      {error ? <div style={{ textAlign: 'center', fontSize: '2rem', height: '75vh' }}>
+        Server Error occured
+      </div> : (
+        <>
+          <Slides Categories={Categories} />
+          <Jobs Categories={Categories} />
+        </>
+      )}
       <HomeFooter />
     </div>
   );

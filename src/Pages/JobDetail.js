@@ -4,15 +4,19 @@ import { HomeBar, HomeFooter } from "../components/AppBar";
 import { Slides } from "../components/Slides";
 import { Details } from "../components/Details";
 
-export const JobDetail = () => {
+export default function JobDetail() {
 
   const { Categories, fetchCategories, oneJob, viewJob } = useContext(AppContext);
   const jobId = localStorage.getItem("jId");
 
   useEffect(() => {
     (async () => {
-      await fetchCategories();
-      await viewJob(jobId);
+      try {
+        await fetchCategories();
+        await viewJob(jobId);
+      } catch (error) {
+        alert("Server Error");
+      }
     })();
     //eslint-disable-next-line
   }, []);

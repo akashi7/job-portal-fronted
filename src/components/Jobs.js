@@ -26,7 +26,8 @@ export const Jobs = ({ Categories }) => {
             <div className="category">
               <img src={dev} className="pics" alt="dev" />
               <br></br>
-              <button className="button" onClick={() => goViewJobs(category_name)}>Browse</button>
+              {positions === '0' ? <button className="button" disabled >Browse</button>
+                : <button className="button" onClick={() => goViewJobs(category_name)}>Browse</button>}
             </div>
           </div>
         );

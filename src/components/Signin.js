@@ -8,7 +8,7 @@ export const Signin = () => {
 
   let url;
 
-  process.env.NODE_ENV === "development" ? url = `http://localhost:9000` : url = ``;
+  process.env.NODE_ENV === "development" ? url = `http://localhost:9000` : url = `https://eportalback.herokuapp.com`;
 
 
   const initialState = {
@@ -21,6 +21,8 @@ export const Signin = () => {
 
   const [state, setState] = useState(initialState);
 
+  const [error, setError] = useState(false);
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -31,25 +33,32 @@ export const Signin = () => {
       },
       body: JSON.stringify(state)
     };
-    const res = await (await fetch(`${url}/api/auth/empLogin`, config)).json();
-    if (res.status === 200) {
-      localStorage.setItem("auth", res.token);
-      history.push("/Dashboard");
-    }
-    if (res.status === 300) {
+
+    try {
+      const res = await (await fetch(`${url}/api/auth/empLogin`, config)).json();
+      if (res.status === 200) {
+        localStorage.setItem("auth", res.token);
+        history.push("/Dashboard");
+      }
+      if (res.status === 300) {
+        setLoading(false);
+        setState({ ...state, message: res.message });
+        setTimeout(() => {
+          setState({ ...state, message: "" });
+        }, 4000);
+      }
+      if (res.status === 409) {
+        setLoading(false);
+        setState({ ...state, message: res.error });
+        setTimeout(() => {
+          setState({ ...state, message: "" });
+        }, 4000);
+      }
+    } catch (error) {
+      setError(true);
       setLoading(false);
-      setState({ ...state, message: res.message });
-      setTimeout(() => {
-        setState({ ...state, message: "" });
-      }, 4000);
     }
-    if (res.status === 409) {
-      setLoading(false);
-      setState({ ...state, message: res.error });
-      setTimeout(() => {
-        setState({ ...state, message: "" });
-      }, 4000);
-    }
+
 
   };
 
@@ -74,6 +83,11 @@ export const Signin = () => {
         </div>
         <br></br>
         <br></br>
+        {error ? <div style={{ backgroundColor: "red", padding: "5px", color: "white" }}>
+          <p> Server Error occured </p>
+
+        </div> : ""}
+        <br />
         <form onSubmit={(e) => handleLogin(e)} >
           <input type="text" placeholder="Email" className="input" required
             onChange={(e) => setState({ ...state, username: e.target.value })}

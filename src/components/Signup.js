@@ -6,7 +6,7 @@ export const Signup = () => {
 
   let url;
 
-  process.env.NODE_ENV === "development" ? url = `http://localhost:9000` : url = ``;
+  process.env.NODE_ENV === "development" ? url = `http://localhost:9000` : url = `https://eportalback.herokuapp.com`;
 
   const history = useHistory();
 
@@ -23,6 +23,8 @@ export const Signup = () => {
 
   const [state, setState] = useState(initialState);
 
+  const [error, setError] = useState(false);
+
   const handleSignUp = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -33,30 +35,36 @@ export const Signup = () => {
       },
       body: JSON.stringify(state)
     };
-    const res = await (await fetch(`${url}/api/auth/empRegister`, config)).json();
-    if (res.status === 200) {
-      setSuccess(true);
-    }
-    if (res.status === 305) {
+
+    try {
+      const res = await (await fetch(`${url}/api/auth/empRegister`, config)).json();
+      if (res.status === 200) {
+        setSuccess(true);
+      }
+      if (res.status === 305) {
+        setLoading(false);
+        setState({ ...state, message: res.message });
+        setTimeout(() => {
+          setState({ ...state, message: "" });
+        }, 4000);
+      }
+      if (res.status === 300) {
+        setLoading(false);
+        setState({ ...state, message: res.message });
+        setTimeout(() => {
+          setState({ ...state, message: "" });
+        }, 4000);
+      }
+      if (res.status === 409) {
+        setLoading(false);
+        setState({ ...state, message: res.error });
+        setTimeout(() => {
+          setState({ ...state, message: "" });
+        }, 4000);
+      }
+    } catch (error) {
+      setError(true);
       setLoading(false);
-      setState({ ...state, message: res.message });
-      setTimeout(() => {
-        setState({ ...state, message: "" });
-      }, 4000);
-    }
-    if (res.status === 300) {
-      setLoading(false);
-      setState({ ...state, message: res.message });
-      setTimeout(() => {
-        setState({ ...state, message: "" });
-      }, 4000);
-    }
-    if (res.status === 409) {
-      setLoading(false);
-      setState({ ...state, message: res.error });
-      setTimeout(() => {
-        setState({ ...state, message: "" });
-      }, 4000);
     }
 
   };
@@ -81,8 +89,12 @@ export const Signup = () => {
         </div>
         <br></br>
         <br></br>
+        {error ? <div>
+          <p style={{ color: "red" }}>Error occured on the Server</p>
+          <br />
+        </div> : ""}
         {success ? <div className='sent'>
-          <p>An email was sent to {state.email} </p>
+          <p>Your account credentials was sent to your email</p>
         </div> :
           <form onSubmit={(e) => handleSignUp(e)} >
             <input type="email" placeholder="Email" className="input" required

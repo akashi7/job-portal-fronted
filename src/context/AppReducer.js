@@ -31,6 +31,82 @@ export const AppReducer = (state, action) => {
         ...state,
         Applicants: action.payload
       };
+    case 'EMP_ALL_APPLICANTS':
+      return {
+        ...state,
+        ApplicantsList: action.payload
+      };
+    case 'SELECTED_APPLICANTS':
+      return {
+        ...state,
+        SelectedList: action.payload
+      };
+    case 'NOT_VIEWED_APPLICANTS':
+      return {
+        ...state,
+        NotViewedList: action.payload
+      };
+    case 'NEW_APPLICANTS':
+      return {
+        ...state,
+        NewApplicantsList: action.payload
+      };
+    case 'NUMBER_OF_JOBS':
+      return {
+        ...state,
+        NofJobs: action.payload
+      };
+    case 'NUMBER_OF_APPLICANTS':
+      return {
+        ...state,
+        NofApplicants: action.payload
+      };
+    case 'NO_OF_SELECTED_APPLICANTS':
+      return {
+        ...state,
+        NofSelected: action.payload
+      };
+    case 'NO_OF_NOTVIEWED_APPLICANTS':
+      return {
+        ...state,
+        NofnotViewed: action.payload
+      };
+    case 'NO_OF_NEW_APPLICANTS':
+      return {
+        ...state,
+        NofNew: action.payload
+      };
+    case 'EMP_JOB_CATEGORIES':
+      return {
+        ...state,
+        Job_categories: action.payload
+      };
+    case 'EMP_JOB_TITLES':
+      return {
+        ...state,
+        Job_titles: action.payload
+      };
+    case 'APPLICANT_DETAILS':
+      return {
+        ...state,
+        JobApplicant: action.payload
+      };
+    case 'NUMBER_OF_ONE_JOB':
+      return {
+        ...state,
+        nOfOneJobApplicants: action.payload
+      };
+
+    case 'NUMBER_OF_ONE_JOB_UNSEEN':
+      return {
+        ...state,
+        nOfOneUnseenJobApplicants: action.payload
+      };
+    case 'NUMBER_OF_ONE_JOB_SELECTED':
+      return {
+        ...state,
+        nOfOneSelectedJobApplicants: action.payload
+      };
     default:
       return null;
   }

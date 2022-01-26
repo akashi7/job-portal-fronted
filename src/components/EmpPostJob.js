@@ -11,7 +11,7 @@ export const EmpPostJob = ({ Categories }) => {
 
   let url;
 
-  process.env.NODE_ENV === "development" ? url = `http://localhost:9000` : url = ``;
+  process.env.NODE_ENV === "development" ? url = `http://localhost:9000` : url = `https://eportalback.herokuapp.com`;
 
 
   const categoryArray = Categories.jobCategory.map(({ id, category_name }) => {
@@ -156,7 +156,7 @@ export const EmpPostJob = ({ Categories }) => {
               </section>
             )}
           </Dropzone>
-          <textarea placeholder='Small description' cols={62} rows={10} className="descri"
+          <textarea placeholder='Small description' cols={60} rows={10} className="descri"
             onChange={(e) => setState({ ...state, description: e.target.value })}
             required
           >

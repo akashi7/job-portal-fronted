@@ -1,7 +1,7 @@
 import { HomeBar } from "../components/AppBar";
 import { Signup } from "../components/Signup";
 
-export const SignUp = () => {
+export default function SignUp() {
   return (
     <div>
       <HomeBar />

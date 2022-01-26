@@ -11,7 +11,6 @@ export const JobDetails = ({ Jobs }) => {
 
   const length = Jobs.categoryJobs.length;
 
-
   return (
     <div className="allJ">
       {(length === 0) ? <div className="no-jobs">

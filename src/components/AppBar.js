@@ -62,9 +62,9 @@ export const EmpNavBar = () => {
     localStorage.clear();
     history.push('/');
   }
-  function goToJobs() {
-    history.push('/Dashboard/jobs');
-  }
+  // function goToJobs() {
+  //   history.push('/Dashboard/jobs');
+  // }
   function goDash() {
     history.push('/Dashboard');
   }
@@ -77,7 +77,6 @@ export const EmpNavBar = () => {
       <p onClick={() => goDash()}>Dashboard</p>
       <div className='emp-links'>
         <p onClick={() => goProfile()}>Profile</p>
-        <p onClick={() => goToJobs()}>Jobs</p>
         <p onClick={() => onLogOut()} >Log out</p>
       </div>
     </div>

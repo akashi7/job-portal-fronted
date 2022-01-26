@@ -1,37 +1,37 @@
 import { useContext, useEffect } from "react";
 import { AppContext } from "../context/AppContext";
 import { EmpNavBar } from "../components/AppBar";
+import { EmpPostJob } from "../components/EmpPostJob";
 import { useHistory } from "react-router-dom";
-import { EmpViewJobs } from "../components/EmpViewJobs";
 
+export default function PostJob() {
 
-export default function EmpJobs() {
+  const { fetchCategories, Categories } = useContext(AppContext);
 
-  const history = useHistory();
   const token = localStorage.getItem("auth");
-
-  const { EmpJobs, EmpViewAllJobs } = useContext(AppContext);
+  const history = useHistory();
 
   useEffect(() => {
     (async () => {
       if (!token) {
-        history.push('/signIn');
+        history.push('/');
       }
       else {
         try {
-          await EmpViewAllJobs(token);
+          await fetchCategories();
         } catch (error) {
-          alert("Server Error");
+          alert("server error");
         }
       }
 
     })();
     //eslint-disable-next-line
   }, []);
+
   return (
     <div className="dashboard">
       <EmpNavBar />
-      <EmpViewJobs Jobs={EmpJobs} />
+      <EmpPostJob Categories={Categories} />
     </div>
   );
 };

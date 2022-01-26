@@ -5,7 +5,7 @@ export const Password = ({ token }) => {
 
   let url;
 
-  process.env.NODE_ENV === "development" ? url = `http://localhost:9000` : url = ``;
+  process.env.NODE_ENV === "development" ? url = `http://localhost:9000` : url = `https://eportalback.herokuapp.com`;
 
   const history = useHistory();
 

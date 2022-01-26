@@ -6,7 +6,7 @@ export const Details = ({ jobView }) => {
 
   let url;
 
-  process.env.NODE_ENV === "development" ? url = `http://localhost:9000` : url = ``;
+  process.env.NODE_ENV === "development" ? url = `http://localhost:9000` : url = `https://eportalback.herokuapp.com`;
 
   const history = useHistory();
 
@@ -25,8 +25,10 @@ export const Details = ({ jobView }) => {
 
   const [state, setState] = useState(initialState);
 
-  const toogleApply = (id) => {
+  const toogleApply = (id, Id, title) => {
     localStorage.setItem("apId", id);
+    localStorage.setItem("empId", Id);
+    localStorage.setItem("JT", title);
     if (!applied) {
       setApplied(true);
     }
@@ -40,6 +42,9 @@ export const Details = ({ jobView }) => {
   const applyJob = async (e) => {
 
     const jobId = localStorage.getItem("apId");
+    const EmpId = localStorage.getItem("empId");
+    const jobTitle = localStorage.getItem("JT");
+
 
     e.preventDefault();
     setLoading(true);
@@ -56,7 +61,7 @@ export const Details = ({ jobView }) => {
       body: formData
     };
 
-    const res = await (await fetch(`${url}/api/home/applyJob?id=${jobId}`, config)).json();
+    const res = await (await fetch(`${url}/api/home/applyJob?id=${jobId}&&emp_id=${EmpId}&&job_title=${jobTitle}`, config)).json();
 
     if (res.status === 200) {
       setLoading(false);
@@ -87,7 +92,7 @@ export const Details = ({ jobView }) => {
   return (
     <>
       {!applied ? <div className="apply-job">
-        {jobView.OneJob.map(({ id, company_name, job_category, job_type, document, description, job_title, experience, expiry_date }) => {
+        {jobView.OneJob.map(({ id, company_name, job_category, job_type, document, description, job_title, experience, expiry_date, emp_id }) => {
           return (
             <div key={id} >
               <h3>Company : {company_name} </h3>
@@ -107,7 +112,7 @@ export const Details = ({ jobView }) => {
                 <br></br>
               </div>
               <button onClick={(f, n) => saveFile(document, company_name)} className="apply-btn">Download job description file</button>
-              <button className="apply-btn" onClick={(e) => toogleApply(id)} >Apply</button>
+              <button className="apply-btn" onClick={(e, h, g) => toogleApply(id, emp_id, job_title)} >Apply</button>
             </div>
           );
         })}

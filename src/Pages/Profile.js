@@ -3,7 +3,7 @@ import { EmpNavBar } from "../components/AppBar";
 import { useHistory } from "react-router-dom";
 import { Password } from "../components/Password";
 
-export const Profile = () => {
+export default function Profile() {
   const history = useHistory();
   const token = localStorage.getItem("auth");
 
@@ -17,7 +17,7 @@ export const Profile = () => {
   }, []);
 
   return (
-    <div className="dashboard">
+    <div className="profi">
       <EmpNavBar />
       <Password token={token} />
     </div>

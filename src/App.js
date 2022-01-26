@@ -1,33 +1,74 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
-import AllJobs from './Pages/AllJobs';
-import { Home } from './Pages/Home';
-import { JobDetail } from './Pages/JobDetail';
-import { SignIn } from './Pages/SignIn';
-import { SignUp } from './Pages/SignUp';
 import { AppProvider } from './context/AppContext';
-import { Dashboard } from './Pages/Dashboard';
-import { EmpJobs } from './Pages/EmpJobs';
-import { EmpJobDetails } from './Pages/EmpJobDetails';
-import { Profile } from './Pages/Profile';
+
+
+
+
+
+const HomePage = lazy(() => import('./Pages/Home'));
+const JobDetail = lazy(() => import('./Pages/JobDetail'));
+const SignIn = lazy(() => import('./Pages/SignIn'));
+const SignUp = lazy(() => import('./Pages/SignUp'));
+const AllJobs = lazy(() => import('./Pages/AllJobs'));
+const Dashboard = lazy(() => import('./Pages/Dashboard'));
+const EmpJobs = lazy(() => import('./Pages/EmpJobs'));
+const EmpJobDetails = lazy(() => import('./Pages/EmpJobDetails'));
+const Profile = lazy(() => import('./Pages/Profile'));
+const AllApplicantsList = lazy(() => import('./Pages/AllApplicantsList'));
+const SelectedApp = lazy(() => import('./Pages/SelectedApp'));
+const ViewedApplicants = lazy(() => import('./Pages/ViewedApplicants'));
+const NewApplicants = lazy(() => import('./Pages/NewApplicants'));
+const PostJob = lazy(() => import('./Pages/PostJob'));
+const Applicant = lazy(() => import('./Pages/Applicant'));
+
+
+function Loading() {
+  return (
+    <pre style={{ textAlign: 'center', fontSize: "2rem" }}>
+      <br />
+      <p>Loading....</p>
+    </pre>
+  );
+}
 
 
 function App() {
   return (
     <Router>
-      <Switch>
-        <AppProvider>
-          <Route path="/" component={Home} exact />
-          <Route path="/jobs" component={AllJobs} exact />
-          <Route path="/job/detail" component={JobDetail} exact />
-          <Route path="/signIn" component={SignIn} exact />
-          <Route path="/signUp" component={SignUp} exact />
-          <Route path="/Dashboard" component={Dashboard} exact />
-          <Route path="/Dashboard/jobs" component={EmpJobs} exact />
-          <Route path="/Dashboard/jobs/:id" component={EmpJobDetails} exact />
-          <Route path="/Profile" component={Profile} exact />
-        </AppProvider>
-      </Switch>
+      <AppProvider>
+        <Suspense fallback={Loading()}>
+          <Switch>
+            <Route path="/" component={HomePage} exact />
+            <Route path="/jobs" component={AllJobs} exact />
+            <Route path="/job/detail" component={JobDetail} exact />
+            <Route path="/signIn" component={SignIn} exact />
+            <Route path="/signUp" component={SignUp} exact />
+            <Route path="/Dashboard" component={Dashboard} exact />
+            <Route path="/Dashboard/jobs" component={EmpJobs} exact />
+            <Route path="/Dashboard/jobs/:id" component={EmpJobDetails} exact />
+            <Route path="/Profile" component={Profile} exact />
+            <Route path="/applicants" component={AllApplicantsList} exact />
+            <Route path="/applicants/selected" component={SelectedApp} exact />
+            <Route path="/applicants/notviewed" component={ViewedApplicants} exact />
+            <Route path="/applicants/new" component={NewApplicants} exact />
+            <Route path="/dashboard/postjob" component={PostJob} exact />
+            <Route path="/dashboard/applicant" component={Applicant} exact />
+            <Route
+              path="*"
+              component={() => (
+                <pre style={{ textAlign: 'center', fontSize: '2rem' }}>
+                  404
+                  <br />
+                  <br />
+                  The page you requested for was not found.
+                </pre>
+              )}
+            />
+          </Switch>
+        </Suspense>
+      </AppProvider>
     </Router>
   );
 }

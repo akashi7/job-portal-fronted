@@ -23,7 +23,7 @@ body {
   display: flex;
   padding: 10px;
   justify-content: space-between;
-  background-color: rgb(72, 72, 202);
+  background-color: #009879;
   align-items: center;
   color: whitesmoke;
 }
@@ -102,6 +102,14 @@ body {
   padding: 11px;
   border: none;
 }
+.chooseCate {
+  padding: 10px;
+  border: none;
+}
+.filterCate {
+  padding: 5px;
+  margin-left: 20px;
+}
 .button {
   background: #f7c52a;
   border: none;
@@ -109,6 +117,16 @@ body {
   border-radius: 2px;
   width: fit-content;
   text-transform: uppercase;
+}
+.postB {
+  background: #f7c52a;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  width: fit-content;
+  text-transform: uppercase;
+  color: white;
+  margin-left: 20px;
 }
 .post-button {
   background: #f7c52a;
@@ -234,7 +252,7 @@ body {
 }
 .inputJ {
   padding: 0.5rem 0.1rem;
-  width: 50%;
+  width: 30%;
   border-radius: 2px;
   height: 48px;
   transition: all 0.5s;
@@ -347,7 +365,7 @@ body {
   padding: 20px;
 }
 .descri {
-  margin-left: 109px;
+  margin-left: 59px;
   padding: 20px;
 }
 .sent {
@@ -420,6 +438,22 @@ body {
   background-color: rgb(221, 219, 219);
   height: 100vh;
 }
+.allApp {
+  background-color: rgb(221, 219, 219);
+  height: 100vh;
+}
+.newApp {
+  background-color: rgb(221, 219, 219);
+  height: 100vh;
+}
+.selecteAp {
+  background-color: rgb(221, 219, 219);
+  height: 100vh;
+}
+.notViewed {
+  background-color: rgb(221, 219, 219);
+  height: 100vh;
+}
 .inputsv {
   border: 1px solid black;
   padding: 0.5rem 0.1rem;
@@ -451,7 +485,244 @@ body {
   margin-left: 20px;
   color: black;
 }
-@media only screen and (max-width: 480px) {
+.dashbar {
+  padding: 10px;
+  display: flex;
+  color: white;
+}
+.dashbar1 {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  width: 20%;
+  border: 1px solid #009879;
+}
+.dashbar2 {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #009879;
+  color: black;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  width: 20%;
+}
+.dashbar3 {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #009879;
+  color: black;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  width: 20%;
+}
+.dashbar4 {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #009879;
+  color: black;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  width: 20%;
+}
+.dashbar5 {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #009879;
+  color: black;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  width: 20%;
+}
+#customers {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+#customers thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+#customers th,
+#customers td {
+  padding: 12px 15px;
+}
+
+#customers tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+#customers tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+#customers tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+.table {
+  padding: 15px;
+  height: 350px;
+  overflow-y: auto;
+}
+.postNew {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+.click {
+  color: rgb(72, 72, 202);
+}
+.click:hover {
+  cursor: pointer;
+  border-bottom: 2px solid black;
+}
+.appV {
+  padding: 15px;
+}
+.head {
+  padding: 15px;
+}
+.oneDash {
+  padding: 10px;
+  display: flex;
+}
+.oneDash1 {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  width: 40%;
+  color: black;
+  background-color: whitesmoke;
+  border: 1px solid #009879;
+}
+.oneDash2 {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  width: 40%;
+  color: black;
+  background-color: whitesmoke;
+  border: 1px solid #009879;
+}
+.oneDash3 {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  width: 40%;
+  color: black;
+  background-color: whitesmoke;
+  border: 1px solid #009879;
+}
+.arrange {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
+.five {
+  margin-left: 70px;
+}
+.four {
+  margin-left: 30px;
+}
+.three {
+  margin-left: 30px;
+}
+.twoK {
+  margin-left: 50px;
+}
+.oneT {
+  margin-left: 40px;
+}
+.fourK {
+  margin-left: 120px;
+}
+.profi {
+  height: 100vh;
+}
+
+@media only screen and (max-width: 768px) {
+  .dashboard {
+    height: 100%;
+  }
+  .dashbar {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .dashbar1 {
+    width: 40%;
+  }
+  .dashbar2 {
+    width: 40%;
+  }
+  .dashbar3 {
+    width: 40%;
+  }
+  .dashbar4 {
+    width: 40%;
+  }
+  .dashbar5 {
+    width: 40%;
+  }
+  .allApp {
+    height: 100%;
+  }
+  .selecteAp {
+    height: 100%;
+  }
+  .notViewed {
+    height: 100%;
+  }
+  .newApp {
+    height: 100%;
+  }
+  .oneDash {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .oneDash1 {
+    width: 45%;
+  }
+  .oneDash2 {
+    width: 45%;
+  }
+  .oneDash3 {
+    width: 45%;
+  }
+  .profi {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
   .homeBar {
     display: flex;
     flex-wrap: wrap;
@@ -511,6 +782,103 @@ body {
     margin-left: 10px;
   }
   .inputJ {
-    width: 90%;
+    width: 80%;
+  }
+  .dashbar {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .dashbar1 {
+    width: 100%;
+  }
+  .dashbar2 {
+    width: 100%;
+    display: none;
+  }
+  .dashbar3 {
+    width: 100%;
+    display: none;
+  }
+  .dashbar4 {
+    width: 100%;
+  }
+  .dashbar5 {
+    width: 100%;
+  }
+  .dashboard {
+    height: 100%;
+  }
+  .postNew {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .postB {
+    margin-left: 0px;
+    margin-top: 10px;
+    display: none;
+  }
+  .table {
+    width: 100%;
+    padding: 5px;
+    overflow-y: auto;
+    overflow-x: auto;
+  }
+  .homeBarEmp {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px;
+  }
+  .emp-links {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .emp-links p {
+    margin: 0px;
+  }
+  .allApp {
+    height: 100%;
+  }
+  .table {
+    width: 100%;
+  }
+  .selecteAp {
+    height: 100%;
+  }
+  .notViewed {
+    height: 100%;
+  }
+  .newApp {
+    height: 100%;
+  }
+  .oneDash {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .oneDash1 {
+    width: 100%;
+  }
+  .oneDash2 {
+    width: 100%;
+  }
+  .oneDash3 {
+    width: 100%;
+  }
+  .viewPeople {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .profi {
+    height: 100vh;
+  }
+  .search_P {
+    margin-top: 100px;
+    margin-left: 10px;
+    width: 80%;
+    padding: 10px;
   }
 }
