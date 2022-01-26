@@ -881,4 +881,7 @@ body {
     width: 80%;
     padding: 10px;
   }
+  .lefts {
+    display: none;
+  }
 }
