@@ -501,6 +501,7 @@ body {
   text-align: center;
   width: 20%;
   border: 1px solid #009879;
+  border-left: 5px solid black;
 }
 .dashbar2 {
   display: flex;
@@ -513,6 +514,7 @@ body {
   margin: 10px;
   text-align: center;
   width: 20%;
+  border-left: 5px solid black;
 }
 .dashbar3 {
   display: flex;
@@ -525,6 +527,7 @@ body {
   margin: 10px;
   text-align: center;
   width: 20%;
+  border-left: 5px solid black;
 }
 .dashbar4 {
   display: flex;
@@ -537,6 +540,7 @@ body {
   margin: 10px;
   text-align: center;
   width: 20%;
+  border-left: 5px solid black;
 }
 .dashbar5 {
   display: flex;
@@ -549,6 +553,7 @@ body {
   margin: 10px;
   text-align: center;
   width: 20%;
+  border-left: 5px solid black;
 }
 #customers {
   border-collapse: collapse;

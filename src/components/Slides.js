@@ -21,7 +21,7 @@ export const Slides = ({ Categories }) => {
         <br></br>
         <p style={{ color: "white" }}>Search job by category</p>
         <form className="form">
-          <select className="select">
+          <select className="select"  >
             <option>--Search category---</option>
             {categoryArray}
           </select>
