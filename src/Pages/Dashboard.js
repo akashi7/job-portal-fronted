@@ -181,7 +181,7 @@ export default function Dashboard() {
                         <td>{job_category}</td>
                         <td>{job_title}</td>
                         <td>{posted_on}</td>
-                        <td>{expiry_date}</td>
+                        <td>{moment(expiry_date).format("DD/MM/YYYY")}</td>
                         <td
                           className="click"
                           onClick={() => viewOne(id)}
