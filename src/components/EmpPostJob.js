@@ -21,7 +21,10 @@ export const EmpPostJob = ({ Categories }) => {
   const [file, setFile] = useState([]);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [deadLine, setDeadLine] = useState(new Date());
+
+  const deadLineDate = new Date().toLocaleString();
+
+  const [deadLine, setDeadLine] = useState(deadLineDate);
 
 
   const token = localStorage.getItem("auth");
