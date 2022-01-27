@@ -23,7 +23,7 @@ export const EmpPostJob = ({ Categories }) => {
   const [success, setSuccess] = useState(false);
 
 
-  const [deadLine, setDeadLine] = useState(new Date().toLocaleString());
+  const [deadLine, setDeadLine] = useState(new Date());
 
 
   const token = localStorage.getItem("auth");
