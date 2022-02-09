@@ -47,7 +47,8 @@ const initialState = {
   },
   nOfOneJobApplicants: [],
   nOfOneUnseenJobApplicants: [],
-  nOfOneSelectedJobApplicants: []
+  nOfOneSelectedJobApplicants: [],
+  noOfUserJobs: []
 };
 
 export const AppContext = createContext(initialState);
@@ -469,6 +470,19 @@ export const AppProvider = ({ children }) => {
     }
   };
 
+  const UsercountJobs = async (categoryName) => {
+    const config = {
+      method: "GET",
+    };
+    const res = await (await fetch(`${url}/api/home/countJobs?categoryName=${categoryName}`, config)).json();
+    if (res.status === 200) {
+      dispatch({
+        type: 'NUMBER_OF_USER_JOBS_COUNT',
+        payload: res.data
+      });
+    }
+  };
+
 
 
 
@@ -482,7 +496,7 @@ export const AppProvider = ({ children }) => {
       numberOfSelectedApplicants, numberOfNotviewedApplicants,
       numberOfNewApplicants, EmpjobCategories, EmpjobTitles,
       viewOneApplicant, oneJobApplicants, oneJobUnseenApplicants,
-      oneJobSelectedApplicants
+      oneJobSelectedApplicants, UsercountJobs
     }}>
       {children}
     </AppContext.Provider>

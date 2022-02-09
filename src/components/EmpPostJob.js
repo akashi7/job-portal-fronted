@@ -25,6 +25,9 @@ export const EmpPostJob = ({ Categories }) => {
 
   const [deadLine, setDeadLine] = useState(new Date());
 
+  const date = new Date();
+  const time = date.toLocaleString();
+
 
   const token = localStorage.getItem("auth");
 
@@ -36,6 +39,7 @@ export const EmpPostJob = ({ Categories }) => {
     experience: "",
     jobCategory: "",
     jobType: "",
+    deadLine: time
   });
 
   const onDrop = File => {
@@ -44,7 +48,6 @@ export const EmpPostJob = ({ Categories }) => {
       setState({ ...state, document: File[0] });
     }
   };
-
   const handlePostJob = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -61,14 +64,16 @@ export const EmpPostJob = ({ Categories }) => {
     }
 
     else {
+
       let formData = new FormData();
+      let DeadLineDate = deadLine.toLocaleDateString();
       formData.append('document', state.document);
       formData.append('jobCategory', state.jobCategory);
       formData.append('jobTitle', state.jobTitle);
       formData.append('jobType', state.jobType);
       formData.append('experience', state.experience);
       formData.append('description', state.description);
-      formData.append('deadline', deadLine);
+      formData.append('deadLine', DeadLineDate);
 
       const config = {
         method: 'POST',

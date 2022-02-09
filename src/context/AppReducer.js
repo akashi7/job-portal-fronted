@@ -107,6 +107,11 @@ export const AppReducer = (state, action) => {
         ...state,
         nOfOneSelectedJobApplicants: action.payload
       };
+    case 'NUMBER_OF_USER_JOBS_COUNT':
+      return {
+        ...state,
+        noOfUserJobs: action.payload
+      };
     default:
       return null;
   }

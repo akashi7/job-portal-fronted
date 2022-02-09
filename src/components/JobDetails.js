@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
-// import moment from "moment";
+import moment from "moment";
 
-export const JobDetails = ({ Jobs }) => {
+export const JobDetails = ({ Jobs, count }) => {
 
   const history = useHistory();
 
@@ -13,11 +13,18 @@ export const JobDetails = ({ Jobs }) => {
   const length = Jobs.categoryJobs.length;
 
   return (
-    <div className="allJ">
+    <div className="allJ"  >
+      {count.map(({ nbrOfJobs }) => {
+        return (
+          <div key={2} className="numberOfJobs" >
+            <button className="round"> Available Jobs : {nbrOfJobs} </button>
+          </div>
+        );
+      })}
       {(length === 0) ? <div className="no-jobs">
         <p>No jobs Available come back later</p>
       </div>
-        : Jobs.categoryJobs.map(({ id, job_title, company_name, posted_on, due, expiry_date }) => {
+        : Jobs.categoryJobs.map(({ id, job_title, company_name, posted_on, expiry_date }) => {
           return (
             <>
               <div key={id} className="job-det" >
@@ -25,9 +32,8 @@ export const JobDetails = ({ Jobs }) => {
                 <div className="JOB_D">
                   <p className="color"  >{company_name} </p>
                   <p>on : {posted_on} </p>
-                  <p>Due : {expiry_date}</p>
-                  {due === 'old' ? <p style={{ color: "red" }} > Expired </p> :
-                    <button className="app-button" onClick={(e) => goSeeJob(id)}>Apply</button>}
+                  <p>Due : {moment(expiry_date).format("DD/MM/YYYY")}</p>
+                  <button className="app-button" onClick={(e) => goSeeJob(id)}>Apply</button>
                 </div>
               </div>
             </>

@@ -188,7 +188,7 @@ body {
   border: 0.5px solid rgb(187, 183, 183);
 }
 .round {
-  padding: 5px;
+  padding: 10px;
   border-radius: 10px;
   color: white;
   background-color: rgb(24, 24, 163);
@@ -196,7 +196,8 @@ body {
 .portal {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+}
+.job-portal-all {
   height: 400px;
   padding: 10px;
   overflow-y: auto;
@@ -678,6 +679,10 @@ body {
 .profi {
   height: 100vh;
 }
+.numberOfJobs {
+  padding: 10px;
+  text-align: center;
+}
 
 @media only screen and (max-width: 768px) {
   .dashboard {
@@ -770,7 +775,6 @@ body {
     flex-wrap: wrap;
     width: 100%;
     background-color: whitesmoke;
-    border: 1px solid gray;
   }
   .color {
     color: rgb(24, 24, 163);

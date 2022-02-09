@@ -14,24 +14,23 @@ export const Jobs = ({ Categories }) => {
   };
 
   return (
-    <div className="portal">
-      {Categories.jobCategory.map(({ id, category_name, positions }) => {
-        return (
-          <div key={id} className="job-d">
-            <h3>{category_name}</h3>
-            <br></br>
-            {!positions ? <button className="round">0</button> : <button className="round"> {positions} </button>}
-            <br></br>
-            <br></br>
-            <div className="category">
-              <img src={dev} className="pics" alt="dev" />
+    <div className='job-portal-all' >
+      <div className="portal">
+        {Categories.jobCategory.map(({ id, category_name }) => {
+          return (
+            <div key={id} className="job-d">
+              <h3>{category_name}</h3>
               <br></br>
-              {positions === '0' ? <button className="button" disabled >Browse</button>
-                : <button className="button" onClick={() => goViewJobs(category_name)}>Browse</button>}
+              <div className="category">
+                <img src={dev} className="pics" alt="dev" />
+                <br></br>
+                <button className="button" onClick={() => goViewJobs(category_name)}>Browse</button>
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
+
     </div>
   );
 };

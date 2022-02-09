@@ -5,7 +5,7 @@ import { Slides } from "../components/Slides";
 import { JobDetails } from "../components/JobDetails";
 
 export default function AllJobs() {
-  const { Jobs, viewAllJobs, Categories, fetchCategories } = useContext(AppContext);
+  const { Jobs, viewAllJobs, Categories, fetchCategories, UsercountJobs, noOfUserJobs } = useContext(AppContext);
   const categoryName = localStorage.getItem("category");
 
 
@@ -16,6 +16,7 @@ export default function AllJobs() {
       try {
         await fetchCategories();
         await viewAllJobs(categoryName);
+        await UsercountJobs(categoryName);
       } catch (error) {
         setError(true);
       }
@@ -30,7 +31,7 @@ export default function AllJobs() {
       </div> : (
         <>
           <Slides Categories={Categories} />
-          <JobDetails Jobs={Jobs} />
+          <JobDetails Jobs={Jobs} count={noOfUserJobs} />
           <HomeFooter />
         </>
       )}
