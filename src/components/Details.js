@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { saveAs } from "file-saver";
 import { useHistory } from "react-router-dom";
+import moment from "moment";
 
 export const Details = ({ jobView }) => {
 
@@ -105,7 +106,7 @@ export const Details = ({ jobView }) => {
               <br></br>
               <p>Experince :{experience} year(s) </p>
               <br></br>
-              <p>Deadline :{expiry_date} </p>
+              <p>Deadline :{moment(expiry_date).format("DD/MM/YYYY")} </p>
               <br></br>
               <div className="description">
                 <p>Description : {description}</p>

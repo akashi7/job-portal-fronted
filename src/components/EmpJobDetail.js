@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { saveAs } from "file-saver";
 import { useHistory } from "react-router-dom";
+import moment from "moment";
 
 
 export const EmpJobDetail = ({ Job, Applicants, token }) => {
@@ -115,7 +116,7 @@ export const EmpJobDetail = ({ Job, Applicants, token }) => {
               <br></br>
               <p>Experience : {experience} year(s)</p>
               <br></br>
-              <p>Due : {expiry_date}</p>
+              <p>Due : {moment(expiry_date).format("DD/MM/YYYY")}</p>
               <br></br>
               {due === 'old' ? (
                 loadingTwo ? <button className="button" disabled >loading....</button> :

@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import { AppProvider } from './context/AppContext';
+import PreLoading from './Pages/PreLoading';
 
 
 
@@ -24,21 +25,12 @@ const PostJob = lazy(() => import('./Pages/PostJob'));
 const Applicant = lazy(() => import('./Pages/Applicant'));
 
 
-function Loading() {
-  return (
-    <pre style={{ textAlign: 'center', fontSize: "2rem" }}>
-      <br />
-      <p>Loading....</p>
-    </pre>
-  );
-}
-
 
 function App() {
   return (
     <Router>
       <AppProvider>
-        <Suspense fallback={Loading()}>
+        <Suspense fallback={PreLoading()}>
           <Switch>
             <Route path="/" component={HomePage} exact />
             <Route path="/jobs" component={AllJobs} exact />

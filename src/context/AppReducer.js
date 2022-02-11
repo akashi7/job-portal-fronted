@@ -1,118 +1,120 @@
-export const AppReducer = (state, action) => {
+import * as actionType from './ActionTypes';
 
-  switch (action.type) {
-    case 'JOB_CATEGORIES':
+export const AppReducer = (state, { type, payload }) => {
+
+  switch (type) {
+    case actionType.JOB_CATEGORIES:
       return {
         ...state,
-        Categories: action.payload
+        Categories: payload
       };
-    case 'JOBS':
+    case actionType.JOBS:
       return {
         ...state,
-        Jobs: action.payload
+        Jobs: payload
       };
-    case 'ONE_JOB':
+    case actionType.ONE_JOB:
       return {
         ...state,
-        oneJob: action.payload
+        oneJob: payload
       };
-    case 'EMP_JOBS':
+    case actionType.EMP_JOBS:
       return {
         ...state,
-        EmpJobs: action.payload
+        EmpJobs: payload
       };
-    case 'EMP_ONE_JOB':
+    case actionType.EMP_ONE_JOB:
       return {
         ...state,
-        EmpOneJob: action.payload
+        EmpOneJob: payload
       };
-    case 'ALL_APPLICANTS':
+    case actionType.ALL_APPLICANTS:
       return {
         ...state,
-        Applicants: action.payload
+        Applicants: payload
       };
-    case 'EMP_ALL_APPLICANTS':
+    case actionType.EMP_ALL_APPLICANTS:
       return {
         ...state,
-        ApplicantsList: action.payload
+        ApplicantsList: payload
       };
-    case 'SELECTED_APPLICANTS':
+    case actionType.SELECTED_APPLICANTS:
       return {
         ...state,
-        SelectedList: action.payload
+        SelectedList: payload
       };
-    case 'NOT_VIEWED_APPLICANTS':
+    case actionType.NOT_VIEWED_APPLICANTS:
       return {
         ...state,
-        NotViewedList: action.payload
+        NotViewedList: payload
       };
-    case 'NEW_APPLICANTS':
+    case actionType.NEW_APPLICANTS:
       return {
         ...state,
-        NewApplicantsList: action.payload
+        NewApplicantsList: payload
       };
-    case 'NUMBER_OF_JOBS':
+    case actionType.NUMBER_OF_JOBS:
       return {
         ...state,
-        NofJobs: action.payload
+        NofJobs: payload
       };
-    case 'NUMBER_OF_APPLICANTS':
+    case actionType.NUMBER_OF_APPLICANTS:
       return {
         ...state,
-        NofApplicants: action.payload
+        NofApplicants: payload
       };
-    case 'NO_OF_SELECTED_APPLICANTS':
+    case actionType.NO_OF_SELECTED_APPLICANTS:
       return {
         ...state,
-        NofSelected: action.payload
+        NofSelected: payload
       };
-    case 'NO_OF_NOTVIEWED_APPLICANTS':
+    case actionType.NO_OF_NOTVIEWED_APPLICANTS:
       return {
         ...state,
-        NofnotViewed: action.payload
+        NofnotViewed: payload
       };
-    case 'NO_OF_NEW_APPLICANTS':
+    case actionType.NO_OF_NEW_APPLICANTS:
       return {
         ...state,
-        NofNew: action.payload
+        NofNew: payload
       };
-    case 'EMP_JOB_CATEGORIES':
+    case actionType.EMP_JOB_CATEGORIES:
       return {
         ...state,
-        Job_categories: action.payload
+        Job_categories: payload
       };
-    case 'EMP_JOB_TITLES':
+    case actionType.EMP_JOB_TITLES:
       return {
         ...state,
-        Job_titles: action.payload
+        Job_titles: payload
       };
-    case 'APPLICANT_DETAILS':
+    case actionType.APPLICANT_DETAILS:
       return {
         ...state,
-        JobApplicant: action.payload
+        JobApplicant: payload
       };
-    case 'NUMBER_OF_ONE_JOB':
+    case actionType.NUMBER_OF_ONE_JOB:
       return {
         ...state,
-        nOfOneJobApplicants: action.payload
+        nOfOneJobApplicants: payload
       };
 
-    case 'NUMBER_OF_ONE_JOB_UNSEEN':
+    case actionType.NUMBER_OF_ONE_JOB_UNSEEN:
       return {
         ...state,
-        nOfOneUnseenJobApplicants: action.payload
+        nOfOneUnseenJobApplicants: payload
       };
-    case 'NUMBER_OF_ONE_JOB_SELECTED':
+    case actionType.NUMBER_OF_ONE_JOB_SELECTED:
       return {
         ...state,
-        nOfOneSelectedJobApplicants: action.payload
+        nOfOneSelectedJobApplicants: payload
       };
-    case 'NUMBER_OF_USER_JOBS_COUNT':
+    case actionType.NUMBER_OF_USER_JOBS_COUNT:
       return {
         ...state,
-        noOfUserJobs: action.payload
+        noOfUserJobs: payload
       };
     default:
-      return null;
+      return state;
   }
-}
+};

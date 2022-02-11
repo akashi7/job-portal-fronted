@@ -157,7 +157,8 @@ export const EmpPostJob = ({ Categories }) => {
                     {file}
                   </div>
                     : <div div className="selected-file">
-                      <p>Drag and drop file here, or click to select file</p></div>
+                      <p>Drag and drop file here, or click to select file</p>
+                    </div>
                   }
                 </div>
               </section>
@@ -167,8 +168,8 @@ export const EmpPostJob = ({ Categories }) => {
             onChange={(e) => setState({ ...state, description: e.target.value })}
             required
           >
-          </textarea> </div>
-
+          </textarea>
+        </div>
         <div className="p-but">
           {loading ? <button className="post-button" disabled>POSTING.....</button>
             : <button className="post-button">POST</button>}

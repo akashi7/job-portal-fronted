@@ -1,6 +1,7 @@
 import { createContext, useReducer } from "react";
 import { useHistory } from "react-router-dom";
 import { AppReducer } from "./AppReducer";
+import * as actionType from './ActionTypes';
 
 
 
@@ -69,7 +70,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/home/jobsCategories`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'JOB_CATEGORIES',
+        type: actionType.JOB_CATEGORIES,
         payload: res.data
       });
     }
@@ -83,7 +84,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/home/viewAllJobs?categoryName=${categName}`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'JOBS',
+        type: actionType.JOBS,
         payload: res.data
       });
     }
@@ -96,7 +97,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/home/viewJob?id=${jobId}`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'ONE_JOB',
+        type: actionType.ONE_JOB,
         payload: res.data
       });
     }
@@ -112,7 +113,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/user/viewAllJobs`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'EMP_JOBS',
+        type: actionType.EMP_JOBS,
         payload: res.data
       });
     }
@@ -133,7 +134,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/user/oneJob?jobId=${jobId}`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'EMP_ONE_JOB',
+        type: actionType.EMP_ONE_JOB,
         payload: res.data
       });
     }
@@ -153,7 +154,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/user/allApplicants?jobId=${jobId}`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'ALL_APPLICANTS',
+        type: actionType.ALL_APPLICANTS,
         payload: res.data
       });
     }
@@ -173,7 +174,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/user/applicantsList`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'EMP_ALL_APPLICANTS',
+        type: actionType.EMP_ALL_APPLICANTS,
         payload: res.data
       });
     }
@@ -193,7 +194,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/user/selectedApplicants`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'SELECTED_APPLICANTS',
+        type: actionType.SELECTED_APPLICANTS,
         payload: res.data
       });
     }
@@ -214,7 +215,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/user/notviewedApplicants`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'NOT_VIEWED_APPLICANTS',
+        type: actionType.NOT_VIEWED_APPLICANTS,
         payload: res.data
       });
     }
@@ -234,7 +235,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/user/newApplicants`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'NEW_APPLICANTS',
+        type: actionType.NEW_APPLICANTS,
         payload: res.data
       });
     }
@@ -254,7 +255,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/user/numberOfJobs`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'NUMBER_OF_JOBS',
+        type: actionType.NUMBER_OF_JOBS,
         payload: res.data
       });
     }
@@ -274,7 +275,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/user/numberOfApplicants`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'NUMBER_OF_APPLICANTS',
+        type: actionType.NUMBER_OF_APPLICANTS,
         payload: res.data
       });
     }
@@ -294,7 +295,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/user/numberOfSelected`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'NO_OF_SELECTED_APPLICANTS',
+        type: actionType.NO_OF_SELECTED_APPLICANTS,
         payload: res.data
       });
     }
@@ -314,7 +315,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/user/numberOfNotviewedApplicants`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'NO_OF_NOTVIEWED_APPLICANTS',
+        type: actionType.NO_OF_NOTVIEWED_APPLICANTS,
         payload: res.data
       });
     }
@@ -334,7 +335,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/user/numberOfNewApplicants`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'NO_OF_NEW_APPLICANTS',
+        type: actionType.NO_OF_NEW_APPLICANTS,
         payload: res.data
       });
     }
@@ -354,7 +355,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/user/jobCategories`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'EMP_JOB_CATEGORIES',
+        type: actionType.EMP_JOB_CATEGORIES,
         payload: res.data
       });
     }
@@ -374,7 +375,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/user/jobTitles`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'EMP_JOB_TITLES',
+        type: actionType.EMP_JOB_TITLES,
         payload: res.data
       });
     }
@@ -395,7 +396,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/user/oneApplicant?userId=${userId}`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'APPLICANT_DETAILS',
+        type: actionType.APPLICANT_DETAILS,
         payload: res.data
       });
     }
@@ -417,7 +418,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/user/nOfOneJobApplicants?jobId=${jobId}`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'NUMBER_OF_ONE_JOB',
+        type: actionType.NUMBER_OF_ONE_JOB,
         payload: res.data
       });
     }
@@ -438,7 +439,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/user/nOfOneJobUnseenApplicants?jobId=${jobId}`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'NUMBER_OF_ONE_JOB_UNSEEN',
+        type: actionType.NUMBER_OF_ONE_JOB_UNSEEN,
         payload: res.data
       });
     }
@@ -459,7 +460,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/user/nOfOneJobSelectedApplicants?jobId=${jobId}`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'NUMBER_OF_ONE_JOB_SELECTED',
+        type: actionType.NUMBER_OF_ONE_JOB_SELECTED,
         payload: res.data
       });
     }
@@ -477,7 +478,7 @@ export const AppProvider = ({ children }) => {
     const res = await (await fetch(`${url}/api/home/countJobs?categoryName=${categoryName}`, config)).json();
     if (res.status === 200) {
       dispatch({
-        type: 'NUMBER_OF_USER_JOBS_COUNT',
+        type: actionType.NUMBER_OF_USER_JOBS_COUNT,
         payload: res.data
       });
     }
